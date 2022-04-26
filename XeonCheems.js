@@ -100,11 +100,11 @@ return dDisplay + hDisplay + mDisplay + sDisplay;
 	
 //[target]\\
 	const reply = (teks) => {
-            XeonBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botnma}`,"body": ` Join Bot's Official GC`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/cheemspic.jpg`),"sourceUrl": "https://chat.whatsapp.com/CKkDZxKHTdzJi6xm3g3EpV"}}}, { quoted: m})
+            XeonBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botnma}`,"body": ` 𝚃𝙴𝚂𝚃𝙸𝙽𝙶 𝙱𝙾𝚃`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/cheemspic.jpg`),"sourceUrl": ""}}}, { quoted: m})
         }
         
         const replay = (teks) => {
-            XeonBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botnma}`,"body": ` Subscribe Bot's Official YT Channel`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/cheemspic.jpg`),"sourceUrl": "wa.me/201032199513"}}}, { quoted: m})
+            XeonBotInc.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botnma}`,"body": ` 𝙺𝚒 𝚜𝚊𝚖𝚊 𝙻𝚘𝚟𝚎 𝚈𝚘𝚞`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./XeonMedia/cheemspic.jpg`),"sourceUrl": "wa.me/201032199513"}}}, { quoted: m})
         }
 try {
             let isNumber = x => typeof x === 'number' && !isNaN(x)
@@ -843,7 +843,7 @@ case 'مزعج': {
             let member = participants.map(u => u.id)
             let me = m.sender
             let jodoh = member[Math.floor(Math.random() * member.length)]
-            let jawab = ` هو السبب 🌝
+            let jawab = ` اكتر شخص مزعج في الجروب 🌝
 
  @${jodoh.split('@')[0]}`
             let ments = [ jodoh]
@@ -853,6 +853,21 @@ case 'مزعج': {
                     await XeonBotInc.sendButtonText(m.chat, buttons, jawab, XeonBotInc.user.name, m, {mentions: ments})
             }
             break              
+            case 'توأم': {
+            if (!m.isGroup) throw mess.group
+            let member = participants.map(u => u.id)
+            let orang = member[Math.floor(Math.random() * member.length)]
+            let jodoh = member[Math.floor(Math.random() * member.length)]
+            let jawab = `@${orang.split('@')[0]} ❤️ @${jodoh.split('@')[0]}
+ الاتنين دول شبه بعض هيهيهيه 👀`
+            let menst = [orang, jodoh]
+            let buttons = [
+                        { buttonId: '❤️congrats', buttonText: { displayText: 'موافق/ه🤍' }, type: 1 }
+                    ]
+                    await XeonBotInc.sendButtonText(m.chat, buttons, jawab, XeonBotInc.user.name, m, {mentions: menst})
+ 
+           }
+            break
   case 'join': {
                 if (!isCreator) throw mess.owner
                 if (!text) throw 'Enter the group link!'
@@ -937,7 +952,7 @@ case 'مزعج': {
                 reply(mess.success)
                 }
                 break
-           case 'setppgroup': case 'setgrouppp': case 'setgcpp': case 'setppgrup': case 'setppgc': {
+           case 'setppgroup': case 'جروب صورة': case 'setgcpp': case 'setppgrup': case 'setppgc': {
                 if (!m.isGroup) throw mess.group
                 if (!isAdmins) throw mess.admin
                 if (!quoted) throw `Send/Reply Image With Caption ${prefix + command}`
@@ -1285,7 +1300,7 @@ case 'antilink':
                     await sleep(1500)
                     let btn = [{
                                 urlButton: {
-                                    displayText: 'رقم المطور',
+                                    displayText: 'نشر مفتوح v1 ',
                                     url: 'wa.me/201032199513'
                                 }
                             }, {
@@ -1300,7 +1315,7 @@ case 'antilink':
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: '𝙺𝚒 𝙻𝙾𝚅𝙴 𝚢𝚘𝚞',
                                     id: 'owner'
                                 }  
                             }, {
@@ -1330,7 +1345,7 @@ case 'antilink':
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: '𝙺𝚒 𝙻𝙾𝚅𝙴 𝚢𝚘𝚞',
                                     id: 'owner'
                                 }
                             }]
@@ -2059,7 +2074,7 @@ Available formats : pdf, docx, pptx, xlsx`)
 		}
 		}
 		break
-		case 'hadith': case 'hadist': {
+		case 'hadith': case 'حدياعتاللاث': {
 		if (!args[0]) throw `Example:
 ${prefix + command} bukhari 1
 ${prefix + command} abu-daud 1
@@ -2095,7 +2110,7 @@ ${id}`)
 		}
 		}
 		break
-		case 'alquran': {
+		case 'قران': {
 		if (!args[0]) throw `Example:\n${prefix + command} 1 2\n\nthen the result is surah Al-Fatihah verse 2 along with the audio, and the verse is just 1`
 		if (!args[1]) throw `Example:\n${prefix + command} 1 2\n\nthen the result is surah Al-Fatihah verse 2 along with the audio, and the verse is just 1`
 		let res = await fetchJson(`https://islamic-api-indonesia.herokuapp.com/api/data/quran?surah=${args[0]}&ayat=${args[1]}`)
@@ -2108,7 +2123,7 @@ ${id}`)
 		XeonBotInc.sendMessage(m.chat, {audio: { url: res.result.data.audio.primary }, mimetype: 'audio/mpeg'}, { quoted : m })
 		}
 		break
-		case 'tafsirsurah': {
+		case 'تسنينسزسمضمت': {
 		if (!args[0]) throw `Example:\n${prefix + command} 1 2\n\nthen the result is the interpretation of Surah Al-Fatihah verse 2`
 		if (!args[1]) throw `Example:\n${prefix + command} 1 2\n\nthen the result is the interpretation of Surah Al-Fatihah verse 2`
 		let res = await fetchJson(`https://islamic-api-indonesia.herokuapp.com/api/data/quran?surah=${args[0]}&ayat=${args[1]}`)
@@ -2447,82 +2462,18 @@ reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, 
                     }
                     break 
 case 'tes': case 'test': case 'alive': case 'bot': case 'robot': case 'cheems': case 'doge':{
-                anu = `Hi ${pushname}
-Cheems Bot With You Forever!! 🐶🤚`
+                anu = `𝙷𝚒 ${pushname}
+𝚃𝚑𝚎 𝚋𝚘𝚝 𝚊𝚕𝚒𝚟𝚎 𝚢𝚘𝚞 𝚌𝚊𝚗 𝚞𝚜𝚎 𝚒𝚝`
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')},
-                            hydratedFooterText: `بوت كي التجريبي (تسلكي)`,
+                            hydratedFooterText: `𝚃𝙴𝚂𝚃 𝙱𝙾𝚃 𝚅1 `,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'رقم المطور',
-                                    url: 'wa.me/201032199513'
-                                }
-                            }, {
-                            	urlButton: {
-                                displayText: '',
-                                    url: 'wa.me/201032199513'
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'الأوامر',
-                                    id: `${prefix}allmenu`
-                                }
-                                }, {
-                                quickReplyButton: {
-                                    displayText: '🍒List Menu🍒',
-                                    id: `${prefix}command`
-                                }
-                                }, {
-                                quickReplyButton: {
-                                    displayText: '👤Owner👤',
-                                    id: `${prefix}owner`
-                                }
-                            }]
-                        }
-                    }
-                }), { userJid: m.chat })
-                XeonBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
-                }
-break
-
-            case 'بوت': case 'menu': case 'كي': case '?': {
-            	timestampe = speed();
-latensie = speed() - timestampe
-                anu = ``
-const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-                    templateMessage: {
-                        hydratedTemplate: {
-                            hydratedContentText: anu,
-                            locationMessage: {
-                            jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')},
-                            hydratedFooterText: `Hi 🤚 ${pushname}
-اهلا 
-هدا البوت تسلكي و حتي يتم الانتهاء من البوت الاصلي
-
-https://chat.whatsapp.com/CKkDZxKHTdzJi6xm3g3EpV
-
-
-
-❏「 معلومات البوت 」
-
-السرعة : ${latensie.toFixed(4)} miliseconds
-وقت التشغيل : ${runtime(process.uptime())}
-اسم البوت : ${global.botnma}
-اسم المالك : ${global.ownernma}
-رقم المالك : ${global.owner}
-اسم الهوست : ${os.hostname()}
-منصة : ${os.platform()}
-
-
-اظغط ع الازار اللي تحت
-`,
-                            hydratedButtons: [{
-                                urlButton: {
-                                    displayText: 'رقم المطور',
+                                    displayText: 'نشر مفتوح v1 ',
                                     url: 'wa.me/201032199513'
                                 }
                             }, {
@@ -2542,7 +2493,7 @@ https://chat.whatsapp.com/CKkDZxKHTdzJi6xm3g3EpV
                                 }
                                 }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: '𝙺𝚒 𝙻𝙾𝚅𝙴 𝚢𝚘𝚞',
                                     id: `${prefix}owner`
                                 }
                             }]
@@ -2552,13 +2503,71 @@ https://chat.whatsapp.com/CKkDZxKHTdzJi6xm3g3EpV
                 XeonBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 }
 break
-case 'command':{
+
+            case 'بوت🤍' : case 'ريو🤍' : {
+            	timestampe = speed();
+latensie = speed() - timestampe
+                anu = ``
+const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                    templateMessage: {
+                        hydratedTemplate: {
+                            hydratedContentText: anu,
+                            locationMessage: {
+                            jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')},
+                            hydratedFooterText: `Hi 🤚 ${pushname}
+*منور شكرا ع استخدم بوت كي تجريبي*
+*-اكتب الاوامر عادي بدون زخرفة -*
+❏「 معلومات البوت 」
+
+السرعة : ${latensie.toFixed(4)} miliseconds
+وقت التشغيل : ${runtime(process.uptime())}
+اسم البوت : ${global.botnma}
+اسم المالك : ${global.ownernma}
+رقم المالك : ${global.owner}
+اسم الهوست : ${os.hostname()}
+منصة : ${os.platform()}
+
+
+`,
+                            hydratedButtons: [{
+                                urlButton: {
+                                    displayText: 'نشر مفتوح v1 ',
+                                    url: 'https://chat.whatsapp.com/G7bPYjd0mXAAo9jJQkNlAB'
+                                }
+                            }, {
+                            	urlButton: {
+                                displayText: '',
+                                    url: 'https://chat.whatsapp.com/G7bPYjd0mXAAo9jJQkNlAB'
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: '𝑺𝑻𝑨𝑹𝑻',
+                                    id: `${prefix}allmenu`
+                                }
+                                }, {
+                                quickReplyButton: {
+                                    displayText: '',
+                                    id: `${prefix}command`
+                                }
+                                }, {
+                                quickReplyButton: {
+                                    displayText: '𝙺𝚒 𝙻𝙾𝚅𝙴 𝚢𝚘𝚞',
+                                    id: `${prefix}owner`
+                                }
+                            }]
+                        }
+                    }
+                }), { userJid: m.chat })
+                XeonBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
+                }
+break
+case 'com𝕛𝕊𝕁𝕊𝕁𝕊𝕁𝕊𝕂mand':{
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 listMessage :{
                     title: `Hi ${pushname}`,
                     description: `Please Choose The Menu\n\n`,
                     buttonText: "Menu",
-                    footerText: "_بوت كي التجريبي (تسلكي)_",
+                    footerText: "_𝚃𝙴𝚂𝚃 𝙱𝙾𝚃 𝚅1 _",
                     listType: "SINGLE_SELECT",
                     sections: [{
 								"title": "Group Features",
@@ -2671,12 +2680,11 @@ case 'grupmenu': {
 	            anu = `
   *Group Menu*
   
-  ➙ ${prefix}grouplink
-  ➙ ${prefix}ephemeral [option]
-  ➙ ${prefix}setgrouppp
-  ➙ ${prefix}setname [text]
-  ➙ ${prefix}group [option]
-  ➙ ${prefix}editinfo [option]
+  ➙ ${prefix}𝚚𝚛𝚘𝚞𝚙𝚕𝚒𝚗𝚔
+  ➙ ${prefix}صورة جروب
+  ➙ ${prefix}𝚜𝚎𝚝𝚗𝚊𝚖𝚎 [text]
+  ➙ ${prefix}جروب [option]
+  ➙ ${prefix}𝚎𝚍𝚒𝚝𝚒𝚗𝚏𝚘 [option]
   ➙ ${prefix}grupinfo
   ➙ ${prefix}ضيف @user
   ➙ ${prefix}طرد @user
@@ -2689,15 +2697,15 @@ case 'grupmenu': {
                             hydratedContentText: anu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')},
-                            hydratedFooterText: `بوت كي التجريبي (تسلكي)`,
+                            hydratedFooterText: `𝚃𝙴𝚂𝚃 𝙱𝙾𝚃 𝚅1 `,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'رقم المطور',
-                                    url: 'wa.me/201032199513'
+                                    displayText: 'نشر مفتوح v1 ',
+                                    url: 'https://chat.whatsapp.com/G7bPYjd0mXAAo9jJQkNlAB'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: '𝙺𝚒 𝙻𝙾𝚅𝙴 𝚢𝚘𝚞',
                                     id: `${prefix}owner`
                                 }
                             }]
@@ -2731,15 +2739,15 @@ case 'downloadmenu': {
                             hydratedContentText: okemenu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')},
-                            hydratedFooterText: `بوت كي التجريبي (تسلكي)`,
+                            hydratedFooterText: `𝚃𝙴𝚂𝚃 𝙱𝙾𝚃 𝚅1 `,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'رقم المطور',
-                                    url: 'wa.me/201032199513'
+                                    displayText: 'نشر مفتوح v1 ',
+                                    url: 'https://chat.whatsapp.com/G7bPYjd0mXAAo9jJQkNlAB'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: '𝙺𝚒 𝙻𝙾𝚅𝙴 𝚢𝚘𝚞',
                                     id: `${prefix}owner`
                                 }
                             }]
@@ -2768,15 +2776,15 @@ case 'downloadmenu': {
                             hydratedContentText: anu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')},
-                            hydratedFooterText: `بوت كي التجريبي (تسلكي)`,
+                            hydratedFooterText: `𝚃𝙴𝚂𝚃 𝙱𝙾𝚃 𝚅1 `,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'رقم المطور',
-                                    url: 'wa.me/201032199513'
+                                    displayText: 'نشر مفتوح v1 ',
+                                    url: 'https://chat.whatsapp.com/G7bPYjd0mXAAo9jJQkNlAB'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: '𝙺𝚒 𝙻𝙾𝚅𝙴 𝚢𝚘𝚞',
                                     id: `${prefix}owner`
                                 }
                             }]
@@ -2799,15 +2807,15 @@ case 'randommenu': {
                             hydratedContentText: anu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')},
-                            hydratedFooterText: `بوت كي التجريبي (تسلكي)`,
+                            hydratedFooterText: `𝚃𝙴𝚂𝚃 𝙱𝙾𝚃 𝚅1 `,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'رقم المطور',
-                                    url: 'wa.me/201032199513'
+                                    displayText: 'نشر مفتوح v1 ',
+                                    url: 'https://chat.whatsapp.com/G7bPYjd0mXAAo9jJQkNlAB'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: '𝙺𝚒 𝙻𝙾𝚅𝙴 𝚢𝚘𝚞',
                                     id: `${prefix}owner`
                                 }
                             }]
@@ -2831,15 +2839,15 @@ case 'funmenu': {
                             hydratedContentText: anu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')},
-                            hydratedFooterText: `بوت كي التجريبي (تسلكي)`,
+                            hydratedFooterText: `𝚃𝙴𝚂𝚃 𝙱𝙾𝚃 𝚅1 `,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'رقم المطور',
-                                    url: 'wa.me/201032199513'
+                                    displayText: 'نشر مفتوح v1 ',
+                                    url: 'https://chat.whatsapp.com/G7bPYjd0mXAAo9jJQkNlAB'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: '𝙺𝚒 𝙻𝙾𝚅𝙴 𝚢𝚘𝚞',
                                     id: `${prefix}owner`
                                 }
                             }]
@@ -2871,15 +2879,15 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                             hydratedContentText: anu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')},
-                            hydratedFooterText: `بوت كي التجريبي (تسلكي)`,
+                            hydratedFooterText: `𝚃𝙴𝚂𝚃 𝙱𝙾𝚃 𝚅1 `,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'رقم المطور',
-                                    url: 'wa.me/201032199513'
+                                    displayText: 'نشر مفتوح v1 ',
+                                    url: 'https://chat.whatsapp.com/G7bPYjd0mXAAo9jJQkNlAB'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: '𝙺𝚒 𝙻𝙾𝚅𝙴 𝚢𝚘𝚞',
                                     id: `${prefix}owner`
                                 }
                             }]
@@ -2905,15 +2913,15 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                             hydratedContentText: anu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')},
-                            hydratedFooterText: `بوت كي التجريبي (تسلكي)`,
+                            hydratedFooterText: `𝚃𝙴𝚂𝚃 𝙱𝙾𝚃 𝚅1 `,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'رقم المطور',
-                                    url: 'wa.me/201032199513'
+                                    displayText: 'نشر مفتوح v1 ',
+                                    url: 'https://chat.whatsapp.com/G7bPYjd0mXAAo9jJQkNlAB'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: '𝙺𝚒 𝙻𝙾𝚅𝙴 𝚢𝚘𝚞',
                                     id: `${prefix}owner`
                                 }
                             }]
@@ -2963,15 +2971,15 @@ case 'horoscopemenukcodk': {
                             hydratedContentText: anu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')},
-                            hydratedFooterText: `بوت كي التجريبي (تسلكي)`,
+                            hydratedFooterText: `𝚃𝙴𝚂𝚃 𝙱𝙾𝚃 𝚅1 `,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'رقم المطور',
-                                    url: 'wa.me/201032199513'
+                                    displayText: 'نشر مفتوح v1 ',
+                                    url: 'https://chat.whatsapp.com/G7bPYjd0mXAAo9jJQkNlAB'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: '𝙺𝚒 𝙻𝙾𝚅𝙴 𝚢𝚘𝚞',
                                     id: `${prefix}owner`
                                 }
                             }]
@@ -3001,15 +3009,15 @@ case 'convertmenu': {
                             hydratedContentText: anu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')},
-                            hydratedFooterText: `بوت كي التجريبي (تسلكي)`,
+                            hydratedFooterText: `𝚃𝙴𝚂𝚃 𝙱𝙾𝚃 𝚅1 `,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'رقم المطور',
-                                    url: 'wa.me/201032199513'
+                                    displayText: 'نشر مفتوح v1 ',
+                                    url: 'https://chat.whatsapp.com/G7bPYjd0mXAAo9jJQkNlAB'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: '𝙺𝚒 𝙻𝙾𝚅𝙴 𝚢𝚘𝚞',
                                     id: `${prefix}owner`
                                 }
                             }]
@@ -3041,15 +3049,15 @@ case 'nocategorymenu': {
                             hydratedContentText: anu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')},
-                            hydratedFooterText: `بوت كي التجريبي (تسلكي)`,
+                            hydratedFooterText: `𝚃𝙴𝚂𝚃 𝙱𝙾𝚃 𝚅1 `,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'رقم المطور',
-                                    url: 'wa.me/201032199513'
+                                    displayText: 'نشر مفتوح v1 ',
+                                    url: 'https://chat.whatsapp.com/G7bPYjd0mXAAo9jJQkNlAB'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: '𝙺𝚒 𝙻𝙾𝚅𝙴 𝚢𝚘𝚞',
                                     id: `${prefix}owner`
                                 }
                             }]
@@ -3078,15 +3086,15 @@ case 'databasemenu': {
                             hydratedContentText: anu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')},
-                            hydratedFooterText: `بوت كي التجريبي (تسلكي)`,
+                            hydratedFooterText: `𝚃𝙴𝚂𝚃 𝙱𝙾𝚃 𝚅1 `,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'رقم المطور',
-                                    url: 'wa.me/201032199513'
+                                    displayText: 'نشر مفتوح v1 ',
+                                    url: 'https://chat.whatsapp.com/G7bPYjd0mXAAo9jJQkNlAB'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: '𝙺𝚒 𝙻𝙾𝚅𝙴 𝚢𝚘𝚞',
                                     id: `${prefix}owner`
                                 }
                             }]
@@ -3110,15 +3118,15 @@ case 'anonymouschatmenu': {
                             hydratedContentText: anu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')},
-                            hydratedFooterText: `بوت كي التجريبي (تسلكي)`,
+                            hydratedFooterText: `𝚃𝙴𝚂𝚃 𝙱𝙾𝚃 𝚅1 `,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'رقم المطور',
-                                    url: 'wa.me/201032199513'
+                                    displayText: 'نشر مفتوح v1 ',
+                                    url: 'https://chat.whatsapp.com/G7bPYjd0mXAAo9jJQkNlAB'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: '𝙺𝚒 𝙻𝙾𝚅𝙴 𝚢𝚘𝚞',
                                     id: `${prefix}owner`
                                 }
                             }]
@@ -3142,15 +3150,15 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                             hydratedContentText: anu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')},
-                            hydratedFooterText: `بوت كي التجريبي (تسلكي)`,
+                            hydratedFooterText: `𝚃𝙴𝚂𝚃 𝙱𝙾𝚃 𝚅1 `,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'رقم المطور',
-                                    url: 'wa.me/201032199513'
+                                    displayText: 'نشر مفتوح v1 ',
+                                    url: 'https://chat.whatsapp.com/G7bPYjd0mXAAo9jJQkNlAB'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: '𝙺𝚒 𝙻𝙾𝚅𝙴 𝚢𝚘𝚞',
                                     id: `${prefix}owner`
                                 }
                             }]
@@ -3179,15 +3187,15 @@ break
                             hydratedContentText: anu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')},
-                            hydratedFooterText: `بوت كي التجريبي (تسلكي)`,
+                            hydratedFooterText: `𝚃𝙴𝚂𝚃 𝙱𝙾𝚃 𝚅1 `,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'رقم المطور',
-                                    url: 'wa.me/201032199513'
+                                    displayText: 'نشر مفتوح v1 ',
+                                    url: 'https://chat.whatsapp.com/G7bPYjd0mXAAo9jJQkNlAB'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: '𝙺𝚒 𝙻𝙾𝚅𝙴 𝚢𝚘𝚞',
                                     id: `${prefix}owner`
                                 }
                             }]
@@ -3200,77 +3208,39 @@ break
   case 'allmenu': {
   	anu = `
   *All Menu*
-  
-  ꪶGroup Menuꫂ
-  ➙ ${prefix}grouplink
-  ➙ ${prefix}ephemeral [option]
-  ➙ ${prefix}setgrouppp
-  ➙ ${prefix}setname [text]
-  ➙ ${prefix}group [option]
-  ➙ ${prefix}editinfo [option]
-  ➙ ${prefix}grupinfo
+  ➙ ${prefix} قران (اكتب اي رقمين بس بالانجليزي)
+  ☘︎𝙶𝚁𝙾𝚄𝙿 𝙼𝙴𝙽𝚄☘︎
+  ➙ ${prefix}𝚚𝚛𝚘𝚞𝚙𝚕𝚒𝚗𝚔
+  ➙ ${prefix}صورة جروب
+  ➙ ${prefix}𝚜𝚎𝚝𝚗𝚊𝚖𝚎 [text]
+  ➙ ${prefix}جروب [option]
+  ➙ ${prefix}𝚎𝚍𝚒𝚝𝚒𝚗𝚏𝚘 [option]
+  ➙ ${prefix}𝚐𝚛𝚞𝚙𝚒𝚗𝚏𝚘
   ➙ ${prefix}ضيف @user
   ➙ ${prefix}طرد @user
   ➙ ${prefix}اشراف @user
   ➙ ${prefix}عضو @user
  
  ꪶSearch Menuꫂ
-  ➙ ${prefix}play [query]
-  ➙ ${prefix}yts [query]
-  ➙ ${prefix}google [query]
-  ➙ ${prefix}gimage [query]
-  ➙ ${prefix}pinterest [query]
-  ➙ ${prefix}wallpaper [query]
-  ➙ ${prefix}wikimedia [query]
-  ➙ ${prefix}ytsearch [query]
-  
-  ꪶRandom Menuꫂ
-  ➙ ${prefix}coffee
-  ➙ ${prefix} تطقيم
-  
-  ꪶFun Menuꫂ
-  ➙ ${prefix} تشبيك
-  ➙ ${prefix} يحبني
-  ➙ ${prefix}math [mode]  
-  
-  ꪶVoice Changer Menuꫂ
-  ➙ ${prefix}bass
-  ➙ ${prefix}blown
-  ➙ ${prefix}deep
-  ➙ ${prefix}earrape
-  ➙ ${prefix}fast
-  ➙ ${prefix}fat
-  ➙ ${prefix}nightcore
-  ➙ ${prefix}reverse
-  ➙ ${prefix}robot
-  ➙ ${prefix}slow
-  ➙ ${prefix}squirrel
-   
+  ➙ ${prefix}𝚙𝚕𝚊𝚢 [query]
+  ➙ ${prefix}𝚢𝚝𝚜 [query]
+  ➙ ${prefix}𝚐𝚘𝚘𝚐𝚕𝚎 [query]
+  ➙ ${prefix}𝚐𝚒𝚖𝚊𝚐𝚎 [query]
+  ➙ ${prefix}𝚙𝚒𝚗𝚝𝚎𝚛𝚎𝚜𝚝 [query]
+  ➙ ${prefix}𝚠𝚊𝚕𝚕𝚙𝚊𝚙𝚎𝚛[query]
+  ➙ ${prefix} 𝚠𝚒𝚔𝚒𝚖𝚎𝚍𝚒𝚊[query]
+ 
   ꪶConvert Menuꫂ
-  ➙ ${prefix}toimage
-  ➙ ${prefix}removebg
-  ➙ ${prefix}sticker
-  ➙ ${prefix}emojimix
-  ➙ ${prefix}tovideo
-  ➙ ${prefix}togif
-  ➙ ${prefix}tourl
-  ➙ ${prefix}ebinary
-  ➙ ${prefix}dbinary
-  
-  ꪶMisc Menuꫂ
-  ➙ ${prefix}ping
-  ➙ ${prefix}owner
-  ➙ ${prefix}donate
-  ➙ ${prefix}menu / ${prefix}help / ${prefix}?
-  ➙ ${prefix}حذف
-  ➙ ${prefix}chatinfo
-  ➙ ${prefix}quoted
-  ➙ ${prefix}listpc
-  ➙ ${prefix}listgc
-  ➙ ${prefix}listonline
-  ➙ ${prefix}report (report bug to owner)
+  ➙ ${prefix}𝚝𝚘𝚒𝚖𝚊𝚐𝚎
+  ➙ ${prefix}𝚜𝚝𝚒𝚌𝚔𝚎𝚛/𝚜
+  ➙ ${prefix}𝚎𝚖𝚘𝚓𝚒𝚖𝚒𝚡
+  ➙ ${prefix}𝚝𝚘𝚟𝚒𝚍𝚎𝚘
+  ➙ ${prefix}𝚝𝚘𝚐𝚒𝚏
   
   ꪶ Menu Funꫂ
+   ➙ ${prefix} تشبيك
+  ➙ ${prefix} يحبني
+  ➙ ${prefix}𝚖𝚊𝚝𝚑 [𝚖𝚘𝚍𝚎]  
   ➙ ${prefix} يكرهني
   ➙ ${prefix} المز
   ➙ ${prefix} نوب
@@ -3279,41 +3249,27 @@ break
   ➙ ${prefix} كيت
   ➙ ${prefix} مزعج
   ➙ ${prefix} ملل
-  
+  ➙ ${prefix} تطقيم
+➙ ${prefix} توأم
   ꪶAnonymous Menuꫂ
-  ➙ ${prefix}start ( Start Chat )
-  ➙ ${prefix}next ( Next user )
-  ➙ ${prefix}stop ( stop Anonymous chat )
-  
-  ꪶSystem Menuꫂ
-  ➙ ${prefix}antilink On/Off
-  ➙ ${prefix}mute On/Off
-  ➙ ${prefix}antiwame On/Off
-  
-  ꪶ🐕Owner Menu🐕ꫂ
-  ➙ ${prefix}chat [option]
-  ➙ ${prefix}join [link]
-  ➙ ${prefix}leave
-  ➙ ${prefix}setbotpp
-  ➙ ${prefix}blocعk @user
-  ➙ ${prefix}unblock @user
-  ➙ ${prefix}bcgroup
-  ➙ ${prefix}bcall`
+  ➙ ${prefix}𝚜𝚝𝚊𝚛𝚝
+  ➙ ${prefix}𝚗𝚎𝚡𝚝
+  ➙ ${prefix}𝚜𝚝𝚘𝚙 ( للاستخدام خاصية درشة سرية اكتب في خاص بوت *start* )`
     const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')},
-                            hydratedFooterText: `بوت كي التجريبي (تسلكي)`,
+                            hydratedFooterText: `𝚃𝙴𝚂𝚃 𝙱𝙾𝚃 𝚅1 `,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'رقم المطور',
-                                    url: 'wa.me/201032199513'
+                                    displayText: 'نشر مفتوح v1 ',
+                                    url: 'https://chat.whatsapp.com/G7bPYjd0mXAAo9jJQkNlAB'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: '𝙺𝚒 𝙻𝙾𝚅𝙴 𝚢𝚘𝚞',
                                     id: `${prefix}owner`
                                 }
                             }]

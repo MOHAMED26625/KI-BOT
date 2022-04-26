@@ -30,7 +30,7 @@ async function startXeonBotInc() {
     const XeonBotInc = XeonBotIncConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
-        browser: ['Subscribe Xeon','Safari','1.0.0'],
+        browser: ['𝙺𝚒 𝚋𝚘𝚝 𝚞𝚜𝚎𝚛','𝚈𝚘𝚞 𝙲𝚊𝚗','1.0.0'],
         auth: state,
         version
     })
@@ -96,11 +96,11 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
 Description: ${metadata.desc}
 
-اهلا في جروبنا الاسطوري . الالتزام القوانين اهم منك شخصيا 🙂😂🤍`} )
+𝚠𝚎𝚕𝚌𝚘𝚖𝚎 (•̀ᴗ•́)و ...... زاد الجروب نور بك .... الالتزام بالقوانين لانها اهم منك شخصيا 🙂😂🤍`} )
                 } else if (anu.action == 'remove') {
                     XeonBotInc.sendMessage(anu.id, { image: Tol, contextInfo: { mentionedJid: [num] }, caption: `@${num.split("@")[0]} Left ${metadata.subject}
 
-وه. اذهب للجحيم ` })
+وه. وه وه راح في داهية 🌝 ` })
                 }
             }
         } catch (err) {
